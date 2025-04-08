@@ -35,7 +35,7 @@ t_stack	sub_process(char **argv)
 	int		j;
 
 	i = 0;
-	tmp = split(argv[1], 32);
+	tmp = split_spaces(argv[1], 32);
 	while (tmp[i])
 	{
 		j = atoi_2(tmp[i]);
