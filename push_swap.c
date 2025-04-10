@@ -1,3 +1,5 @@
+#include "push_swap.h"
+
 int	main(int argc, char **argv)
 {
 	t_stack *a;
@@ -7,10 +9,13 @@ int	main(int argc, char **argv)
 	if (!a || check_dup(a))
 	{
 		ft_free(&a);
-		ft_error;
+		ft_error();
 	}
-	if (!check_sorted(a))
-		cases(&a);
+	if (!checksorted(a))
+	{
+		b = NULL;
+		cases(&a, &b);
+	}
 	ft_free(&a);
 	return (0);
 }

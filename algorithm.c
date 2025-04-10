@@ -1,4 +1,6 @@
-int	atoi2(char **argv)
+#include "push_swap.h"
+
+int	atoi2(const char *str)
 {
 	int				sign;
 	long long int	i;
@@ -22,12 +24,12 @@ int	atoi2(char **argv)
 		i = i * 10 + (*str - 48);
 		str++;
 	}
-	if ((mod * i) > 2147483647 || (mod * 1) < -2147483647)
+	if ((sign * i) > 2147483647 || (sign * 1) < -2147483647)
 		ft_error();
-	return (mod * i);
+	return (sign * i);
 }
 
-t_stack	sub_process(char **argv)
+t_stack	*sub_process(char **argv)
 {
 	t_stack	*a;
 	char	**tmp;
@@ -35,19 +37,19 @@ t_stack	sub_process(char **argv)
 	int		j;
 
 	i = 0;
-	tmp = split_spaces(argv[1], 32);
+	tmp = split_spaces(argv[1]);
 	while (tmp[i])
 	{
-		j = atoi_2(tmp[i]);
-		ft_add_back(&a, stack_new(j));
+		j = atoi2(tmp[i]);
+		ft_lstadd_back(&a, ft_lstnew(j));
 		i++;
 	}
-	ft_freestr(tmp);
+	free_array(tmp);
 	free(tmp);
 	return (a);
 }
 
-t_stack	process(int argc, char **argv)
+t_stack	*process(int argc, char **argv)
 {
 	t_stack	*a;
 	int		i;
@@ -61,8 +63,8 @@ t_stack	process(int argc, char **argv)
 		a = sub_process(argv);
 	while (i < argc)
 	{
-		j = atoi_2(argv[i]);
-		ft_add_back(&a, stack_new(j));
+		j = atoi2(argv[i]);
+		ft_lstadd_back(&a, ft_lstnew(j));
 		i++;
 	}
 	return (a);
