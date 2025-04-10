@@ -2,7 +2,7 @@
 
 int	whitespace(char c)
 {
-	return ((c >= 9 && c <= 13) || c == 32)
+	return ((c >= 9 && c <= 13) || c == 32);
 }
 
 void	free_array(char **str)

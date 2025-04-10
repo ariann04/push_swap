@@ -26,10 +26,24 @@ void	ft_lstadd_back(t_stack **lst, t_stack *new)
 	t_stack	*last;
 
 	if (!lst || !new)
-		return (NULL);
+		return ;
 	last = ft_lstlast(*lst);
 	if (last)
 		last->next = new;
 	else
 		*lst = new;
+}
+
+int	ft_lstsize(t_stack *lst)
+{
+	int	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+
 }

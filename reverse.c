@@ -41,6 +41,6 @@ void	rrr(t_stack **a, t_stack **b)
 	if (!*a || !(*a)->next || !*b || !(*b)->next)
 		return;
 	rra(a, 0);
-	rrb(a, 0);
+	rrb(b, 0);
 	write(1, "rrr\n", 4);
 }

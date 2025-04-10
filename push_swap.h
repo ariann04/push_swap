@@ -36,9 +36,11 @@ char	*get_next_word(char *str);
 char	**split_spaces(char *str);
 int		checksorted(t_stack *a);
 int		check_dup(t_stack *a);
+int		lowest_pos(t_stack **stack);
 void	ft_error(void);
 void	ft_free(t_stack **lst);
 t_stack	*ft_lstnew(int content);
 t_stack	*ft_lstlast(t_stack *lst);
+int		ft_lstsize(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 #endif

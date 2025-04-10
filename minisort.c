@@ -16,43 +16,48 @@ void	cases(t_stack **a, t_stack **b)
 
 void	sort2(t_stack **a)
 {
-	sa(a, 1);
+	sa(*a, 1);
 }
 
-void	sort3(t_stack **a)
+void	sort3(t_stack **stack)
 {
-	if (check_sorted(*a))
+	if (checksorted(*stack))
 		return ;
-	if (ft_min(*a) == (*a)->nbr)
+	if ((*stack)->content > (*stack)->next->content
+			&& (*stack)->content > (*stack)->next->next->content)
 	{
-		rra(a, 1);
-		sa(a, 1);
+		if ((*stack)->next->content > (*stack)->next->next->content)
+		{
+			sa(*stack, 1);
+			rra(stack, 1);
+		}
+		else
+			ra(stack, 1);
 	}
-	else if (ft_max(*a) == (*a)->nbr)
-	{
-		ra(a, 1);
-		if (!check_sorted(*a))
-			sa(a, 1);
-	}
+	else if ((*stack)->content > (*stack)->next->content)
+		sa(*stack, 1);
+	else if ((*stack)->content > (*stack)->next->next->content)
+		rra(stack, 1);
 	else
 	{
-		if (find_index(*a, ft_max(*a)) == 1)
-			rra(a, 1);
-		else
-			sa(a, 1);
+		sa(*stack, 1);
+		ra(stack, 1);
 	}
 }
 
 void	sort4(t_stack **a, t_stack **b)
 {
-	if (ft_min(*a) == 1)
-		sa(a, 1);
-	else if (ft_min(*a) == 2)
+	int	min_pos;
+
+	min_pos = lowest_pos(a);
+	if (min_pos == 1)
+		sa(*a, 1);
+	else if (min_pos == 2)
 	{
 		rra(a, 1);
 		rra(a, 1);
 	}
-	else if(ft_min(*a) == 3)
+	else if(min_pos == 3)
 		rra(a, 1);
 	pb(a, b);
 	sort3(a);
@@ -60,4 +65,25 @@ void	sort4(t_stack **a, t_stack **b)
 }
 
 void	sort5(t_stack **a, t_stack **b)
-{}
+{
+	int	min_pos;
+
+	min_pos = lowest_pos(a);
+	if (min_pos == 1)
+		sa(*a, 1);
+	else if (min_pos == 2)
+	{
+		ra(a, 1);
+		ra(a, 1);
+	}
+	else if(min_pos == 3)
+	{
+		rra(a, 1);
+		rra(a, 1);
+	}
+	else if(min_pos == 4)
+		rra(a, 1);
+	pb(a, b);
+	sort4(a, b);
+	pa(a, b);
+}

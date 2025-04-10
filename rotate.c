@@ -26,7 +26,7 @@ void	rb(t_stack **b, int print)
 	*b = tmp->next;
 	tmp->next = NULL;
 	if (print)
-		write (1, "ra\n", 3);
+		write (1, "rb\n", 3);
 }
 
 void	rr(t_stack **a, t_stack **b, int print)

@@ -6,10 +6,10 @@ void	pa(t_stack **a, t_stack **b)
 
 	if (!b || !*b)
 		return ;
-	tmp = *a;
-	*a = *b;
+	tmp = *b;
 	*b = (*b)->next;
-	(*a)->next = tmp;
+	tmp->next = *a;
+	*a = tmp;
 	write(1, "pa\n", 3);
 }
 
@@ -19,9 +19,9 @@ void	pb(t_stack **a, t_stack **b)
 
 	if (!a || !*a)
 		return ;
-	tmp = *b;
-	*b = *a;
-	*b = (*b)->next;
-	(*a)->next = tmp;
+	tmp = *a;
+	*a = (*a)->next;
+	tmp->next = *b;
+	*b = tmp;
 	write(1, "pb\n", 3);
 }
