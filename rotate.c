@@ -29,12 +29,11 @@ void	rb(t_stack **b, int print)
 		write (1, "rb\n", 3);
 }
 
-void	rr(t_stack **a, t_stack **b, int print)
+void	rr(t_stack **a, t_stack **b)
 {
 	if (!*a || !(*a)->next || !b || !(*b)->next)
 		return ;
 	ra(a, 0);
 	rb(b, 0);
-	if (print)
-		write(1, "rr\n", 3);
+	write(1, "rr\n", 3);
 }

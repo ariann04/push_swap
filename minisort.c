@@ -11,7 +11,7 @@ void	cases(t_stack **a, t_stack **b)
 	else if (ft_lstsize(*a) == 5)
 		sort5(a, b);
 	else
-		general_algorithm(a, b);
+		big_sort(a, b);
 }
 
 void	sort2(t_stack **a)

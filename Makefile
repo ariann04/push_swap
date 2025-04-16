@@ -1,7 +1,8 @@
 NAME = push_swap
 
 SRCS = push_swap.c swap.c push.c rotate.c reverse.c algorithm.c minisort.c\
-	   split_spaces.c check.c lst_utils.c error_handler.c\
+	   split_spaces.c check.c lst_utils.c error_handler.c bigsort.c\
+	   calculate_cost.c calculate_index.c organize.c
 
 OBJS = ${SRCS:.c=.o}
 
