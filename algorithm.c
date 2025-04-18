@@ -24,7 +24,7 @@ int	atoi2(const char *str)
 		i = i * 10 + (*str - 48);
 		str++;
 	}
-	if ((sign * i) > 2147483647 || (sign * 1) < -2147483647)
+	if ((sign * i) > 2147483647 || (sign * i) < -2147483647)
 		ft_error();
 	return (sign * i);
 }
@@ -38,6 +38,7 @@ t_stack	*sub_process(char **argv)
 
 	i = 0;
 	tmp = split_spaces(argv[1]);
+	a = NULL;
 	while (tmp[i])
 	{
 		j = atoi2(tmp[i]);
@@ -45,7 +46,6 @@ t_stack	*sub_process(char **argv)
 		i++;
 	}
 	free_array(tmp);
-	free(tmp);
 	return (a);
 }
 
@@ -58,9 +58,9 @@ t_stack	*process(int argc, char **argv)
 	a = NULL;
 	i = 1;
 	if (argc < 2)
-		ft_error();
-	if (argc == 2)
-		a = sub_process(argv);
+		exit (2);
+	if (argc == 2 && ft_strchr(argv[1], ' '))
+		return (sub_process(argv));
 	while (i < argc)
 	{
 		j = atoi2(argv[i]);

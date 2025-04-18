@@ -44,7 +44,7 @@ t_stack	*ft_lstlast(t_stack *lst);
 int		ft_lstsize(t_stack *lst);
 void	ft_lstadd_back(t_stack **lst, t_stack *new);
 void	big_sort(t_stack **a, t_stack **b);
-void	*best(t_stack **a, t_stack **b, t_stack *min_node, int size_b);
+t_stack	*best(t_stack **a, t_stack **b, t_stack *min_node, int size_b);
 void	sort_lowest(t_stack **a);
 int		calculate_cost(t_stack *a, t_stack *b, t_stack *node, int inb);
 int		aux_reverse(int *index_a, int *index_b, int size_a, int size_b);

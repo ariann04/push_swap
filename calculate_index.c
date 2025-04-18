@@ -43,7 +43,7 @@ int	calculate_index(t_stack *stack, int number, char letter)
 					&& stack->next->content > number) && letter == 'a')
 			return (index + 1);
 		if ((index == index_low) && letter == 'a' && min_node->content > number)
-			return (index + 1);
+			return (index);
 		if (stack == max_node && max_node->content < number)
 			return (index + 1);
 		stack = stack->next;

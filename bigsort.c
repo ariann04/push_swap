@@ -26,7 +26,7 @@ void	sort_lowest(t_stack **a)
 	}
 }
 
-void	*best(t_stack **a, t_stack **b, t_stack *min_node, int size_b)
+t_stack	*best(t_stack **a, t_stack **b, t_stack *min_node, int size_b)
 {
 	int		index_b;
 	t_stack	*current;

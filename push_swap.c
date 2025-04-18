@@ -11,11 +11,13 @@ int	main(int argc, char **argv)
 		ft_free(&a);
 		ft_error();
 	}
-	if (!checksorted(a))
+	if (checksorted(a))
 	{
-		b = NULL;
-		cases(&a, &b);
+		ft_free(&a);
+		exit(0);
 	}
+	b = NULL;
+	cases(&a, &b);
 	ft_free(&a);
 	return (0);
 }

@@ -2,7 +2,7 @@
 
 int	checksorted(t_stack *a)
 {
-	if (!a)
+	if (!a || !a->next)
 		return (1);
 	while (a->next)
 	{
