@@ -29,7 +29,7 @@ int	count_words(char *str)
 	{
 		while (whitespace(str[i]))
 			i++;
-		while (str[i])
+		if (str[i])
 			count++;
 		while (str[i] && !whitespace(str[i]))
 			i++;
@@ -65,7 +65,7 @@ char	**split_spaces(char	*str)
 	int		i;
 
 	num_words = count_words(str);
-	result = malloc(sizeof(char *) * num_words + 1);
+	result = malloc(sizeof(char *) * (num_words + 1));
 	if (!result)
 		return (NULL);
 	i = 0;
@@ -81,6 +81,7 @@ char	**split_spaces(char	*str)
 		}
 		while (*str && !whitespace(*str))
 			str++;
+		i++;
 	}
 	result[i] = NULL;
 	return (result);

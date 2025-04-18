@@ -17,6 +17,8 @@ int	atoi2(const char *str)
 	}
 	else if (*str == '+')
 		str++;
+	if (!*str || !ft_isdigit(*str))
+		ft_error();
 	while (*str)
 	{
 		if (!ft_isdigit(*str))
@@ -24,7 +26,7 @@ int	atoi2(const char *str)
 		i = i * 10 + (*str - 48);
 		str++;
 	}
-	if ((sign * i) > 2147483647 || (sign * i) < -2147483647)
+	if ((sign * i) > 2147483647 || (sign * i) < -2147483648)
 		ft_error();
 	return (sign * i);
 }
@@ -58,9 +60,12 @@ t_stack	*process(int argc, char **argv)
 	a = NULL;
 	i = 1;
 	if (argc < 2)
-		exit (2);
+		 ft_error();
 	if (argc == 2 && ft_strchr(argv[1], ' '))
-		return (sub_process(argv));
+	{
+		a = (sub_process(argv));
+		return (a);
+	}
 	while (i < argc)
 	{
 		j = atoi2(argv[i]);
