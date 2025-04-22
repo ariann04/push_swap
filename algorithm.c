@@ -6,11 +6,29 @@
 /*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 21:22:14 by tblagoev          #+#    #+#             */
-/*   Updated: 2025/04/22 21:57:52 by tblagoev         ###   ########.fr       */
+/*   Updated: 2025/04/23 00:30:25 by tblagoev         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_isnumber(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 int	atoi2(const char *str)
 {
@@ -29,12 +47,10 @@ int	atoi2(const char *str)
 	}
 	else if (*str == '+')
 		str++;
-	if (!*str || !ft_isdigit(*str))
+	if (!*str)
 		ft_error();
 	while (*str)
 	{
-		if (!ft_isdigit(*str))
-			ft_error();
 		i = i * 10 + (*str - 48);
 		str++;
 	}
@@ -55,6 +71,8 @@ t_stack	*sub_process(char **argv)
 	a = NULL;
 	while (tmp[i])
 	{
+		if (!ft_isnumber(tmp[i]))
+			ft_error();
 		j = atoi2(tmp[i]);
 		ft_lstadd_back(&a, ft_lstnew(j));
 		i++;
@@ -80,6 +98,8 @@ t_stack	*process(int argc, char **argv)
 	}
 	while (i < argc)
 	{
+		if (!ft_isnumber(argv[i]))
+			ft_error();
 		j = atoi2(argv[i]);
 		ft_lstadd_back(&a, ft_lstnew(j));
 		i++;
