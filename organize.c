@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   organize.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:29:00 by tblagoev          #+#    #+#             */
+/*   Updated: 2025/04/22 21:45:27 by tblagoev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	aux_rot(t_stack **a, t_stack **b, int *index_a, int *index_b)
@@ -69,7 +81,6 @@ void	organize(t_stack **a, t_stack **b, int element)
 	index_b = calculate_index(*b, element, 'b');
 	size_a = ft_lstsize(*a);
 	size_b = ft_lstsize(*b);
-
 	if (index_a <= (size_a / 2) || index_b <= (size_b / 2))
 		aux_rot(a, b, &index_a, &index_b);
 	if (index_a > (size_a / 2) || index_b > (size_b / 2))

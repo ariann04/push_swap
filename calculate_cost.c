@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calculate_cost.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:26:00 by tblagoev          #+#    #+#             */
+/*   Updated: 2025/04/22 21:39:18 by tblagoev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	aux_rotate(int *index_a, int *index_b, int size_a, int size_b)
@@ -6,7 +18,7 @@ int	aux_rotate(int *index_a, int *index_b, int size_a, int size_b)
 
 	move = 0;
 	while (((*index_a) <= (size_a / 2) && (*index_b) <= (size_b / 2))
-			&& (*index_a) != 0 && (*index_b) != 0)
+		&& (*index_a) != 0 && (*index_b) != 0)
 	{
 		(*index_a)--;
 		(*index_b)--;
@@ -63,7 +75,7 @@ int	calculate_cost(t_stack *a, t_stack *b, t_stack *node, int inb)
 	movements = 0;
 	if (index_a <= (size_a / 2) || inb <= (size_b / 2))
 		movements += aux_rotate(&index_a, &inb, size_a, size_b);
-	if (index_a > (size_a / 2) || inb > (size_b /2))
+	if (index_a > (size_a / 2) || inb > (size_b / 2))
 		movements += aux_reverse(&index_a, &inb, size_a, size_b);
 	return (movements);
 }

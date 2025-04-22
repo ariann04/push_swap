@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calculate_index.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:26:14 by tblagoev          #+#    #+#             */
+/*   Updated: 2025/04/22 21:53:10 by tblagoev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack	*max_n(t_stack *stack)
@@ -40,7 +52,7 @@ int	calculate_index(t_stack *stack, int number, char letter)
 		if (stack->content == number && letter == 'b')
 			return (index);
 		if (stack->next && (stack->content < number
-					&& stack->next->content > number) && letter == 'a')
+				&& stack->next->content > number) && letter == 'a')
 			return (index + 1);
 		if ((index == index_low) && letter == 'a' && min_node->content > number)
 			return (index);

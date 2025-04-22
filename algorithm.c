@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   algorithm.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:22:14 by tblagoev          #+#    #+#             */
+/*   Updated: 2025/04/22 21:57:52 by tblagoev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	atoi2(const char *str)
@@ -5,10 +17,10 @@ int	atoi2(const char *str)
 	int				sign;
 	long long int	i;
 
-	i = 0;
 	sign = 1;
+	i = 0;
 	while (*str == ' ' || *str == '\t' || *str == '\n' || *str == '\f'
-			|| *str == '\v' || *str == '\r')
+		|| *str == '\v' || *str == '\r')
 		str++;
 	if (*str == '-')
 	{
@@ -60,7 +72,7 @@ t_stack	*process(int argc, char **argv)
 	a = NULL;
 	i = 1;
 	if (argc < 2)
-		 ft_error();
+		ft_error();
 	if (argc == 2 && ft_strchr(argv[1], ' '))
 	{
 		a = (sub_process(argv));

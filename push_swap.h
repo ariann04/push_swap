@@ -1,10 +1,22 @@
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:32:16 by tblagoev          #+#    #+#             */
+/*   Updated: 2025/04/22 21:53:52 by tblagoev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <limits.h>
 # include "libft/libft.h"
 
-typedef	struct	s_stack
+typedef struct s_stack
 {
 	int				content;
 	struct s_stack	*next;

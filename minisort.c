@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   minisort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:27:13 by tblagoev          #+#    #+#             */
+/*   Updated: 2025/04/22 21:45:00 by tblagoev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	cases(t_stack **a, t_stack **b)
@@ -24,7 +36,7 @@ void	sort3(t_stack **stack)
 	if (checksorted(*stack))
 		return ;
 	if ((*stack)->content > (*stack)->next->content
-			&& (*stack)->content > (*stack)->next->next->content)
+		&& (*stack)->content > (*stack)->next->next->content)
 	{
 		if ((*stack)->next->content > (*stack)->next->next->content)
 		{
@@ -57,7 +69,7 @@ void	sort4(t_stack **a, t_stack **b)
 		rra(a, 1);
 		rra(a, 1);
 	}
-	else if(min_pos == 3)
+	else if (min_pos == 3)
 		rra(a, 1);
 	pb(a, b);
 	sort3(a);
@@ -76,12 +88,12 @@ void	sort5(t_stack **a, t_stack **b)
 		ra(a, 1);
 		ra(a, 1);
 	}
-	else if(min_pos == 3)
+	else if (min_pos == 3)
 	{
 		rra(a, 1);
 		rra(a, 1);
 	}
-	else if(min_pos == 4)
+	else if (min_pos == 4)
 		rra(a, 1);
 	pb(a, b);
 	sort4(a, b);

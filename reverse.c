@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   reverse.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tblagoev <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/22 21:33:03 by tblagoev          #+#    #+#             */
+/*   Updated: 2025/04/22 21:55:17 by tblagoev         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	rra(t_stack **a, int print)
@@ -6,7 +18,7 @@ void	rra(t_stack **a, int print)
 	t_stack	*last;
 
 	if (!*a || !(*a)->next)
-		return;
+		return ;
 	tmp = *a;
 	while (tmp->next->next)
 		tmp = tmp->next;
@@ -24,7 +36,7 @@ void	rrb(t_stack **b, int print)
 	t_stack	*last;
 
 	if (!*b || !(*b)->next)
-		return;
+		return ;
 	tmp = *b;
 	while (tmp->next->next)
 		tmp = tmp->next;
@@ -39,7 +51,7 @@ void	rrb(t_stack **b, int print)
 void	rrr(t_stack **a, t_stack **b)
 {
 	if (!*a || !(*a)->next || !*b || !(*b)->next)
-		return;
+		return ;
 	rra(a, 0);
 	rrb(b, 0);
 	write(1, "rrr\n", 4);
