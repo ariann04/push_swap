@@ -3,7 +3,7 @@
 void	ft_error(void)
 {
 	write (2, "Error\n", 6);
-	exit(1);
+	exit(2);
 }
 
 void	ft_free(t_stack **lst)

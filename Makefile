@@ -16,7 +16,7 @@ REMOVE = rm -f
 all: ${NAME}
 
 ${NAME}: ${OBJS} $(LIBFT)
-				${CC} ${CFLAGS} ${OBJS} -L$(LIBFT_DIR) -lft -o ${NAME}
+	${CC} ${CFLAGS} ${OBJS} -L$(LIBFT_DIR) -lft -o ${NAME}
 
 $(LIBFT):
 	make -C $(LIBFT_DIR) all
@@ -30,4 +30,6 @@ fclean:
 	${REMOVE} ${NAME} ${PROGRAM}
 	@make -sC $(LIBFT_DIR) fclean
 
-.PHONY: all clean fclean
+re: fclean all
+
+.PHONY: re all clean fclean 
